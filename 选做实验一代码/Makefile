@@ -1,13 +1,16 @@
 CC = gcc
 CFLAGS = -g -std=c99 -Wall
 
-all: linker assembler
+ASSEMBLER_FILES =  my_assembler_utils.c
+LINKER_FILES =  my_linker_utils.c
 
-linker: linker.c my_assembler_utils.c my_linker_utils.c
-	$(CC) $(CFLAGS) -o linker linker.c my_assembler_utils.c my_linker_utils.c -L. -lP7
+all: assembler linker
 
-assembler: assembler.c my_assembler_utils.c
-	$(CC) $(CFLAGS) -o assembler assembler.c my_assembler_utils.c -L. -lP7
+assembler:  $(ASSEMBLER_FILES)
+	$(CC) $(CFLAGS) -o assembler assembler.c $(ASSEMBLER_FILES) libP7.a
+
+linker:  $(LINKER_FILES)
+	$(CC) $(CFLAGS) -o linker linker.c $(LINKER_FILES) $(ASSEMBLER_FILES) libP7.a
 
 clean:
-	rm -f *.o linker assembler
+	rm *.o linker assembler

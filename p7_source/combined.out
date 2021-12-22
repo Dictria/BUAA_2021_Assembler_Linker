@@ -1,14 +1,34 @@
 .data
-0
+8
 
 .text
 8fb5fffc
 8fb6fff8
 02b64021
-00281021
+00081021
 03e00008
+3c010000
+34230000
+2411000a
+24120014
+acff0000
+acf1fffc
+acf2fff8
+0007e821
+0c000000
+8fbf0000
+00024021
+11000001
+08000000
 
 .symbol
+0	%num
 0	add
+20	main
+72	end
 
 .relocation
+20	num@Hi
+24	num@Lo
+52	add
+68	end
