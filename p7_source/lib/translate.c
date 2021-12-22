@@ -95,7 +95,7 @@ unsigned write_pass_one(FILE *output, const char *name, char **args, int num_arg
         fprintf(output, "ori %s $at %s@Lo\n", args[0], args[1]);
         return 2;
     } else if (strcmp(name, "move") == 0) {
-        fprintf(output, "addu %s $at %s\n", args[0], args[1]);
+        fprintf(output, "addu %s $0 %s\n", args[0], args[1]);
         return 1;
     }
     write_inst_string(output, name, args, num_args);
