@@ -1,0 +1,45 @@
+.data
+16
+
+.text
+lui $at 4097
+ori $v1 $at 0
+addiu $s0 $0 0
+sw $s0 4400 $v1
+j main
+lw $s0 4400 $v1
+addiu $s1 $0 1
+addu $s0 $s0 $s1
+sw $s0 -12 $sp
+lw $s0 -12 $sp
+sw $s0 4400 $v1
+lw $s0 -4 $sp
+lw $s1 -8 $sp
+sw $s0 -16 $sp
+lw $s0 -16 $sp
+lui $at array@Hi
+ori $17 $at array@Lo
+addiu $s1 $0 0
+beq $s0 $s1 L3
+j L0
+j L1
+addiu $v0 $0 0
+jr $ra
+j L2
+lw $s0 -4 $sp
+lw $s1 -8 $sp
+sltu $s0 $s0 $s1
+sw $s0 -20 $sp
+lw $s0 -20 $sp
+addiu $s1 $0 0
+beq $s0 $s1 L7
+j L4
+j L5
+addiu $v0 $0 1
+jr $ra
+j L6
+addiu $v0 $0 -1
+jr $ra
+addiu $v0 $0 -2333
+jr $ra
+jr $ra

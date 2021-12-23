@@ -4,3 +4,4 @@
 *.zip
 */build
 */out
+/compiler

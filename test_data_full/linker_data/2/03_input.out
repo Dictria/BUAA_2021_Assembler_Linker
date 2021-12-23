@@ -1,0 +1,27 @@
+.data
+0
+
+.text
+8fb0fffc
+8fb1fff8
+0211802a
+afb0fff4
+8fb0fff4
+24110000
+12110001
+08000000
+08000000
+8fa2fffc
+03e00008
+8fa2fff8
+03e00008
+
+.symbol
+0	min
+32	_L2
+36	_L0
+44	_L1
+
+.relocation
+28	_L0
+32	_L1

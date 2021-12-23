@@ -1,0 +1,135 @@
+.data
+heap: .space 0
+
+.text
+li $v1, 268500992
+main:
+	li $s5, 0
+	sw $s5, 0($sp)
+	li $s5, 0
+	sw $s5, -4($sp)
+	li $s5, 0
+	sw $s5, -8($sp)
+	li $s5, 0
+	sw $s5, -12($sp)
+	li $s5, 3
+	sw $s5, -16($sp)
+	li $s5, 2
+	sw $s5, -20($sp)
+	li $s5, 4
+	sw $s5, -24($sp)
+	li $s5, 0
+	sw $s5, -28($sp)
+	li $s5, 1
+	sw $s5, -32($sp)
+	li $v0, 5
+	sw $v0, -12($sp)
+	sw $ra, 0($a3)
+	move $sp, $a3
+	jal aa
+	lw $ra, 0($sp)
+	add $sp, $sp, 36
+	move $t0, $v0
+	li $s6, 1
+	addu $t1, $t0, $s6
+	sw $t1, 0($sp)
+	sw $ra, 0($a3)
+	lw $a2, -16($sp)
+	sw $a2, -4($a3)
+	move $sp, $a3
+	jal bb
+	lw $ra, 0($sp)
+	add $sp, $sp, 36
+	move $t0, $v0
+	li $s6, 1
+	addu $t1, $t0, $s6
+	sw $t1, -4($sp)
+	sw $ra, 0($a3)
+	lw $a2, -20($sp)
+	sw $a2, -4($a3)
+	lw $a2, -24($sp)
+	sw $a2, -8($a3)
+	move $sp, $a3
+	jal cc
+	lw $ra, 0($sp)
+	add $sp, $sp, 36
+	move $t0, $v0
+	li $s6, 2
+	sw $t1, -8($sp)
+	lw $s5, -28($sp)
+	bne $s5, $0, __b
+__a:
+	lw $s5, -32($sp)
+	li $s5, 2
+	sw $s5, -32($sp)
+__b:
+	li $v0, 4
+	
+	sw $ra, 0($a3)
+	move $sp, $a3
+	jal dd
+	lw $ra, 0($sp)
+	add $sp, $sp, 36
+	move $t0, $v0
+	sw $ra, 0($a3)
+	move $sp, $a3
+	jal ee
+	lw $ra, 0($sp)
+	add $sp, $sp, 36
+	move $t0, $v0
+	lw $a0, 0($sp)
+	li $v0, 1
+	
+	li $v0, 4
+	
+	lw $a0, -4($sp)
+	li $v0, 1
+	
+	li $v0, 4
+	
+	lw $a0, -8($sp)
+	li $v0, 1
+	
+	li $v0, 4
+	
+	lw $a0, -12($sp)
+	li $v0, 1
+	
+	li $v0, 4
+	
+	lw $a0, -32($sp)
+	li $v0, 1
+	
+	li $v0, 4
+	
+	li $v0, 10
+	
+dd:
+	li $v0, 4
+	
+	jr $ra
+ee:
+	jr $ra
+aa:
+	li $s5, 2
+	sw $s5, -4($sp)
+	lw $s5, -4($sp)
+	li $s6, 1
+	addu $t0, $s5, $s6
+	sw $t0, -4($sp)
+	lw $v0, -4($sp)
+	jr $ra
+bb:
+	lw $s5, -4($sp)
+	li $s6, 1
+	addu $t0, $s5, $s6
+	sw $t0, -4($sp)
+	lw $v0, -4($sp)
+	jr $ra
+cc:
+	lw $s5, -4($sp)
+	lw $s6, -8($sp)
+	addu $t0, $s5, $s6
+	sw $t0, -4($sp)
+	lw $v0, -4($sp)
+	jr $ra

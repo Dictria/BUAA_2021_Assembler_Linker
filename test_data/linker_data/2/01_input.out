@@ -1,0 +1,31 @@
+.data
+12
+
+.text
+8fb0fffc
+8fb1fff8
+afb0fff4
+8fb0fff4
+24110000
+12110001
+08000000
+08000000
+8fa2fffc
+03e00008
+08000000
+8fa2fff8
+03e00008
+03e00008
+
+.symbol
+0	%num
+0	max
+28	_L6
+32	_L3
+44	_L4
+52	_L5
+
+.relocation
+24	_L3
+28	_L4
+40	_L5

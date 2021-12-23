@@ -19,4 +19,4 @@ linker: p7_lib $(LINKER_FILES)
 	$(CC) $(CFLAGS) -o linker linker.c $(LINKER_FILES) $(ASSEMBLER_FILES) libP7.a
 
 clean:
-	del *.o linker assembler libP7.a
+	rm -rf *.o linker assembler libP7.a

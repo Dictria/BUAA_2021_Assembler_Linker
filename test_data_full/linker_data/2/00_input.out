@@ -1,0 +1,27 @@
+.data
+0
+
+.text
+3c010000
+34230000
+27a70000
+acff0000
+8c660000
+acf0fffc
+8c660004
+acf0fff8
+8c660008
+acf0fff4
+0007e821
+0c000000
+8fbf0000
+27bd0000
+afa20000
+
+.symbol
+0	main
+
+.relocation
+0	num@Hi
+4	num@Lo
+44	sort

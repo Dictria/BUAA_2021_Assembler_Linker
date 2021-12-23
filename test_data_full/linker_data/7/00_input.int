@@ -1,0 +1,35 @@
+.data
+4092
+
+.text
+lui $at a@Hi
+ori $t1 $at a@Lo
+lui $at _a@Hi
+ori $t2 $at _a@Lo
+lui $at __a@Hi
+ori $t3 $at __a@Lo
+lui $at _a__@Hi
+ori $t4 $at _a__@Lo
+lui $at _123@Hi
+ori $t5 $at _123@Lo
+lui $at a_23@Hi
+ori $t6 $at a_23@Lo
+lui $at a1@Hi
+ori $t7 $at a1@Lo
+lui $at a0@Hi
+ori $t8 $at a0@Lo
+addu $t1 $t2 $t2
+addu $v0 $a0 $a1
+or $a2 $a3 $t0
+jr $t1
+slt $t2 $t3 $s0
+sltu $s1 $s2 $s3
+sw $s1 0 $t8
+sw $s1 4 $t8
+sw $s1 8 $t8
+sw $s1 16 $t8
+sw $s1 128 $t8
+sw $s1 1024 $t8
+lb $10 4 $t8
+lw $v0 2000 $t8
+ori $0 $0 0x0

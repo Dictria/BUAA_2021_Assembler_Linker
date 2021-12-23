@@ -1,0 +1,18 @@
+.data
+12
+
+.text
+lw $s0 -4 $sp
+lw $s1 -8 $sp
+sw $s0 -12 $sp
+lw $s0 -12 $sp
+addiu $s1 $0 0
+beq $s0 $s1 _L6
+j _L3
+j _L4
+lw $v0 -4 $sp
+jr $ra
+j _L5
+lw $v0 -8 $sp
+jr $ra
+jr $ra

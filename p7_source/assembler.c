@@ -34,10 +34,13 @@ static int read_data_segment(FILE *input, SymbolTable *symtbl) {
         return -1;
     }
     while (fgets(buf, ASSEMBLER_BUF_SIZE, input)) {
+        int has_comment = strchr(buf, '#') != NULL;
         skip_comment(buf);
         char *token = strtok(buf, ASSEMBLER_IGNORE_CHARS);
-        if (token == NULL) {
+        if (token == NULL && has_comment == 0) {
             return byte_offset;
+        } else if (token == NULL && has_comment == 1) {
+            continue;
         }
         char *name = token;
         size_t len = strlen(name);

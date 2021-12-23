@@ -1,0 +1,115 @@
+.data
+0
+
+.text
+lui $at 4097
+ori $v1 $at 0
+addiu $s5 $0 0
+sw $s5 0 $sp
+addiu $s5 $0 0
+sw $s5 -4 $sp
+addiu $s5 $0 0
+sw $s5 -8 $sp
+addiu $s5 $0 0
+sw $s5 -12 $sp
+addiu $s5 $0 3
+sw $s5 -16 $sp
+addiu $s5 $0 2
+sw $s5 -20 $sp
+addiu $s5 $0 4
+sw $s5 -24 $sp
+addiu $s5 $0 0
+sw $s5 -28 $sp
+addiu $s5 $0 1
+sw $s5 -32 $sp
+addiu $v0 $0 5
+sw $v0 -12 $sp
+sw $ra 0 $a3
+addu $sp $0 $a3
+jal aa
+lw $ra 0 $sp
+add $sp $sp 36
+addu $t0 $0 $v0
+addiu $s6 $0 1
+addu $t1 $t0 $s6
+sw $t1 0 $sp
+sw $ra 0 $a3
+lw $a2 -16 $sp
+sw $a2 -4 $a3
+addu $sp $0 $a3
+jal bb
+lw $ra 0 $sp
+add $sp $sp 36
+addu $t0 $0 $v0
+addiu $s6 $0 1
+addu $t1 $t0 $s6
+sw $t1 -4 $sp
+sw $ra 0 $a3
+lw $a2 -20 $sp
+sw $a2 -4 $a3
+lw $a2 -24 $sp
+sw $a2 -8 $a3
+addu $sp $0 $a3
+jal cc
+lw $ra 0 $sp
+add $sp $sp 36
+addu $t0 $0 $v0
+addiu $s6 $0 2
+sw $t1 -8 $sp
+lw $s5 -28 $sp
+bne $s5 $0 __b
+lw $s5 -32 $sp
+addiu $s5 $0 2
+sw $s5 -32 $sp
+addiu $v0 $0 4
+sw $ra 0 $a3
+addu $sp $0 $a3
+jal dd
+lw $ra 0 $sp
+add $sp $sp 36
+addu $t0 $0 $v0
+sw $ra 0 $a3
+addu $sp $0 $a3
+jal ee
+lw $ra 0 $sp
+add $sp $sp 36
+addu $t0 $0 $v0
+lw $a0 0 $sp
+addiu $v0 $0 1
+addiu $v0 $0 4
+lw $a0 -4 $sp
+addiu $v0 $0 1
+addiu $v0 $0 4
+lw $a0 -8 $sp
+addiu $v0 $0 1
+addiu $v0 $0 4
+lw $a0 -12 $sp
+addiu $v0 $0 1
+addiu $v0 $0 4
+lw $a0 -32 $sp
+addiu $v0 $0 1
+addiu $v0 $0 4
+addiu $v0 $0 10
+addiu $v0 $0 4
+jr $ra
+jr $ra
+addiu $s5 $0 2
+sw $s5 -4 $sp
+lw $s5 -4 $sp
+addiu $s6 $0 1
+addu $t0 $s5 $s6
+sw $t0 -4 $sp
+lw $v0 -4 $sp
+jr $ra
+lw $s5 -4 $sp
+addiu $s6 $0 1
+addu $t0 $s5 $s6
+sw $t0 -4 $sp
+lw $v0 -4 $sp
+jr $ra
+lw $s5 -4 $sp
+lw $s6 -8 $sp
+addu $t0 $s5 $s6
+sw $t0 -4 $sp
+lw $v0 -4 $sp
+jr $ra
